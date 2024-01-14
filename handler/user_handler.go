@@ -15,9 +15,9 @@ func HandleSignIn(c echo.Context) error {
 
 func HandleSignUp(c echo.Context) error {
 	type User struct {
-		Email    string
-		FullName string
-		Age      int
+		Email    string `json:"email"`
+		FullName string `json:"name"`
+		Age      int    `json:"age"`
 	}
 	user := User{
 		Email:    "anhnh11111@gmail.com",
