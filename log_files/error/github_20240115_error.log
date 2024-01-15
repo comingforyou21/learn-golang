@@ -1,0 +1,2 @@
+time="2024-01-15T14:03:33.669630781+07:00" level=error msg="pq: relation \"users\" does not exist" file=/home/siem09/Anhnh/CODE/GO/src/learn-go/learn-golang/main.go line=36
+time="2024-01-15T14:04:02.408836636+07:00" level=error msg="sql: no rows in result set" file=/home/siem09/Anhnh/CODE/GO/src/learn-go/learn-golang/main.go line=36

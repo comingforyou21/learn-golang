@@ -1,12 +1,22 @@
 package main
 
 import (
+	"context"
+	"fmt"
 	"mymodule/db"
 	"mymodule/handler"
+	log "mymodule/log"
 	"net/http"
+	"os"
 
 	"github.com/labstack/echo/v4"
 )
+
+func init() {
+	fmt.Println("init package main")
+	os.Setenv("APP_NAME", "github")
+	log.InitLogger(false)
+}
 
 // test
 func main() {
@@ -19,6 +29,12 @@ func main() {
 	}
 	sql.Connect()
 	defer sql.Close()
+
+	var email string
+	err := sql.Db.GetContext(context.Background(), &email, "SELECT email FROM users WHERE email=$1", "abc@gmail.com")
+	if err != nil {
+		log.Error(err.Error())
+	}
 
 	e := echo.New()
 	e.GET("/", welcome)
