@@ -8,6 +8,7 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
+// test
 func main() {
 	sql := &db.Sql{
 		Host:     "localhost",
